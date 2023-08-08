@@ -39,4 +39,15 @@ class ServicePhoneTest {
 		assertEquals(20, servicePhone.addMinutes(phoneOne));
 	}
 
+         @Test
+	void testFindPhone() {
+		
+		setUp();
+		ServicePhone servicePhone = new ServicePhone();
+		servicePhone.setPhoneOne(phoneOne);
+		assertEquals(phoneOne,servicePhone.findPhone("10024584235"));
+	
+
+}
+
 }

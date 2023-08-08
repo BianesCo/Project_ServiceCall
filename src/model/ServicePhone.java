@@ -2,29 +2,32 @@ package model;
 
 public class ServicePhone {
 	
-	private Phone phone;
+	
+	private Phone phoneOne;
+	private Phone phonetwo;
+	private Phone phoneThree;
 	
 	public void setPhoneOne(Phone phone) {
-		this.phone= phone;
+		this.phoneOne= phone;
 		
 	}
 	public void setPhoneTwo(Phone phone) {
-		this.phone= phone;
+		this.phonetwo= phone;
 		
 	}
 	public void setPhoneThree(Phone phone) {
-		this.phone= phone;
+		this.phoneThree= phone;
 		
 	}
 	
 	public Phone getPhoneOne() {
-		return phone;
+		return phoneOne;
 	}
 	public Phone getPhoneTwo() {
-		return phone;
+		return phonetwo;
 	}
 	public Phone getPhoneThree() {
-		return phone;
+		return phoneThree;
 	}
 	 public boolean registryCall(Phone phone, int minutes, EtypeCall etypeCall) {
 		 if (phone == null ) {
@@ -49,7 +52,16 @@ public class ServicePhone {
 		}
 	 } 
 	 public Phone findPhone(String imei) {
-		 return phone;
+                      if (phoneOne != null && phoneOne.getImei().equals(imai)) {
+		        return phoneOne;
+		    } else if (phonetwo != null && phonetwo.getImei().equals(imai)) {
+		        return phonetwo;
+		    } else if (phoneThree != null && phoneThree.getImei().equals(imai)) {
+		        return phoneThree;
+		    }
+
+		    return null;
+		 
 	 }
 	 public int addMinutes(Phone phone) {
 		 if (findPhone(phone.getImei())== null) {
